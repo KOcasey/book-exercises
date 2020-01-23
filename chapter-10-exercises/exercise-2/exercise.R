@@ -53,10 +53,10 @@ salaries[salaries$salary_adjustments == min(salaries$salary_adjustments), "emplo
 mean(salaries$salary_adjustments)
 
 # For people who did not get a raise, how much money did they lose on average?
-
+mean(salaries[salaries$raise == FALSE, "salary_adjustments"])
 
 ## Consider: do the above averages match what you expected them to be based on 
 ## how you generated the salaries?
 
 # Write a .csv file of your salary data to your working directory
-
+write.csv(salaries, "chapter_10_exercise_2.csv", row.names = FALSE)
